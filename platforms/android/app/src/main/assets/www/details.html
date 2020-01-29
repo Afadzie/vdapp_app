@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+
+		<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <title>Chater House</title>
+
+        <!-- CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media-queries.css">
+		<script src="js/sweetalert.min.js" ></script>
+		
+    </head>
+
+    <body>
+    <div class="" style="">
+		<!-- Wrapper -->
+    	<div class="wrapper">
+
+			<!-- Sidebar -->
+			<nav class="sidebar">
+				
+				<!-- close sidebar menu -->
+				<div class="dismiss">
+					<span><img src="img/left-arrow.png" alt="menu"></span>
+				</div>
+				
+				<ul class="list-unstyled menu-elements">
+					<li class="active">
+						<a class="" href="index.html"> Home</a>
+					</li>
+					<li>
+						<a class="" href="details.html">Take Details</a>
+					</li>
+					<li>
+						<a class="" href="view.html">View Visitors</a>
+					</li>
+				</ul>
+				
+				
+				
+				<div class="dark-light-buttons">
+					<a class="btn btn-primary btn-customized-4 btn-customized-dark" href="#" role="button">Dark</a>
+					<a class="btn btn-primary btn-customized-4 btn-customized-light" href="#" role="button">Light</a>
+				</div>
+			
+			</nav>
+			<!-- End sidebar -->
+			
+			<!-- Dark overlay -->
+    		<div class="overlay"></div>
+
+			<!-- Content -->
+			<div class="content">
+			
+			
+				<!-- open sidebar menu -->
+				<a class="open-menu" href="#" role="button">
+                   <span><img src="img/menu.png" alt="menu"></span>
+                </a>
+			
+		        <!-- Top content -->
+		        <div class="">
+			        <div class="container">
+			            <div class="row">
+						<h3>Welcome to Chater House</h3>
+			                <div class="col col-lg-12">
+			                	<div class="panel panel-default">
+                                 <div class="panel-body">
+								 <form id="visitorForm">
+								 
+  <div class="form-group">
+    <input type="text" class="form-control" autocomplete="off" name="firstname" id="firstname" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  autocomplete="off" name="lastname" id="lastname" placeholder="Last Name">
+  </div>
+    <div class="form-group">
+    <input type="number" class="form-control" autocomplete="off" name="number" id="number" placeholder="Phone Number">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" autocomplete="off" name="email" id="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" autocomplete="off" name="profession" id="profession" placeholder="Profession">
+  </div>
+    <div class="form-group">
+    <input type="text" class="form-control"  autocomplete="off" name="host" id="host" placeholder="Host">
+  </div>
+  <div class="form-group">
+         <div class="form-group">
+                    <select class="form-control" name="purpose" id="purpose" >
+                      <option value="">Select Purpose</option>
+                      <option value="Visit">Visit</option>
+					  <option value="Private Meeting">Private Meeting</option>
+                      <option value="Official Meeting">Official Meeting</option>
+                      <option value="Business Meeting">Business Meeting</option>
+                      <option value="Buy Ticket">Buy Ticket</option>
+					  <option value="Deliver Package/message">Deliver Package/message</option>
+                    </select>
+                  </div><!-- /.form-group -->
+  </div>
+
+
+                        <!--- <input type="submit" value="Submit" onclick="new_visitor('new_visitor')" class="btn btn-success"> -->
+                    <input type="submit" value="Submit" class="btn btn-success">
+                 </form>
+                                  </div>
+                                  </div>
+								
+			                </div>
+			            </div>
+			        </div>
+		        </div>
+		
+
+	         </div>
+	        </div>
+	        <!-- End content -->
+        
+        </div>
+        <!-- End wrapper -->
+		
+		
+		        <!-- Javascript -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery-migrate-3.0.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/scripts.js"></script>
+		
+<script>
+
+		
+$(document).ready(function() {
+
+/*
+function alertme(){ swal({
+     title: "Thank You!",
+     text: "Your row has been deleted.",
+     type: "success",
+	 icon: "success",
+	 
+    timer: 4000
+    });
+    }
+	}
+
+alertme();
+
+*/
+
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ 
+     //submit event
+     $('#visitorForm').on('submit',function(e){
+     e.preventDefault();
+	
+	
+	function alertme (){ 
+	
+	swal({
+     title: "Thank You!",
+     text: "You are welcome to Chater House.",
+     type: "success",
+	 icon: "success",
+	 
+    timer: 7000
+    });
+    }
+	
+
+//alertme();
+
+//setTimeout("showbox()", 30000);
+
+// validate
+
+                // function new_user(key){
+				 
+				  // alert("i am IN");
+				   
+				   var firstname = $("#firstname");
+				   var lastname = $("#lastname");
+				   var number = $("#number");
+				   var email = $("#email");
+				   var profession = $("#profession");
+				   var host = $("#host");
+				   var purpose = $("#purpose");
+				  
+				   
+				   var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                   var is_email=re.test(email.val());
+				   
+				   var firstname_error = false;
+				   var lastname_error = false;
+				   var number_error = false;
+				   var email_error = false;
+				   var profession_error = false;
+				   var host_error = false;
+				   var purpose_error = false;
+			
+				   
+				  
+				   if(firstname.val() == ''){
+					   firstname.css('border','1px solid red','shadow','2px');
+			           firstname_error = true;
+			           return;
+				   }else firstname.css('border','1px solid green','shadow','2px');
+				   
+				   if(lastname.val() == ''){
+					   lastname.css('border','1px solid red','shadow','2px');
+			           lastname_error = true;
+			           return;
+				   }else lastname.css('border','1px solid green','shadow','2px');
+	
+                    if(number.val() == ''){
+					   number.css('border','1px solid red','shadow','2px');
+			           number_error = true;
+			           return;
+				   }else number.css('border','1px solid green','shadow','2px');
+	
+                  /* if(email == ''){
+					    email.css('border','1px solid red','shadow','2px');
+			           email_error = true;
+			           return;
+				   }else email.css('border','1px solid green','shadow','2px'); */
+				   
+				   if( profession.val() == ''){
+					  profession.css('border','1px solid red','shadow','2px');
+			           profession_error = true;
+			           return;
+				   }else profession.css('border','1px solid green','shadow','2px');
+				   
+				   if( host.val() == ''){
+					  host.css('border','1px solid red','shadow','2px');
+			           host_error = true;
+			           return;
+				   }else host.css('border','1px solid green','shadow','2px');
+				   
+				   if( purpose.val() == ''){
+					   purpose.css('border','1px solid red','shadow','2px');
+			           purpose_error = true;
+			           return;
+				   }else purpose.css('border','1px solid green','shadow','2px');
+				   				   
+
+				  
+                  if(firstname_error === false && lastname_error === false && number_error === false && profession_error === false && host_error === false && purpose_error === false)
+				  
+				  {
+			
+			//alert('Good');
+			
+			
+
+    let firstname =  $('#firstname').val();
+    let lastname =  $('#lastname').val();
+    let number =  $('#number').val();
+    let email =  $('#email').val();
+    let profession =  $('#profession').val();
+    let host =  $('#host').val();
+    let purpose =  $('#purpose').val();
+
+    addVisitor(firstname, lastname, number, email, profession, host, purpose );
+    
+  
+
+    //insert data via api
+    
+    function addVisitor (firstname, lastname, number, email, profession, host, purpose ){
+  
+    $.ajax({
+     method:'POST',
+     url:'https://grandarenagh.com/vdapp/api/vdapp',
+     data:{firstname:firstname, lastname:lastname, number:number, email:email, profession:profession, host:host, purpose:purpose}
+
+    }).done(function(visitor){
+	//swal("Good job!", "You clicked the button!", "success");
+    //alert('Hello'+visitor.firstname+' thanks for the details');
+	
+	$('#firstname').val('');
+	$('#lastname').val('');
+	$('#number').val('');
+	$('#email').val('');
+	$('#profession').val('');
+	$('#host').val('');
+	$('#purpose').val('');
+	
+      alertme();
+	
+});
+} 
+
+}
+
+});
+
+});
+
+
+</script>
+</body>
+</html>

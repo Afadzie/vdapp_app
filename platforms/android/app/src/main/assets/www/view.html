@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+
+		<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <title>Chater House</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media-queries.css">
+        <link rel="stylesheet" href="css/all.css">
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="favicon.png">
+
+<link rel="stylesheet" type="text/css" href="css/select.bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css"/>
+
+    </head>
+
+    <body>
+    <div class="" ><!-- Wrapper -->
+    	<div class="wrapper">
+
+			<!-- Sidebar -->
+			<nav class="sidebar">
+				
+				<!-- close sidebar menu -->
+				<div class="dismiss">
+					<span><img src="img/left-arrow.png" alt="menu"></span>
+				</div>
+				
+				<ul class="list-unstyled menu-elements">
+					<li class="active">
+						<a class="" href="index.html"> Home</a>
+					</li>
+					<li>
+						<a class="" href="details.html">Take Details</a>
+					</li>
+					<li>
+						<a class="" href="view.html">View Visitors</a>
+					</li>
+					
+				</ul>
+				
+				
+				
+				<div class="dark-light-buttons">
+					<a class="btn btn-primary btn-customized-4 btn-customized-dark" href="#" role="button">Dark</a>
+					<a class="btn btn-primary btn-customized-4 btn-customized-light" href="#" role="button">Light</a>
+				</div>
+			
+			</nav>
+			<!-- End sidebar -->
+		
+			<!-- Content -->
+			<div class="content">
+			
+			
+				<!-- open sidebar menu -->
+				<a class="open-menu" href="#" >
+                   <span><img src="img/menu.png" alt="menu"></span>
+                </a>
+			
+		        <!-- Top content -->
+		        <div class="">
+			        <div class="container">
+			            <div class="row">
+			                <div class="col col-lg-12">
+							              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Visitors Data Table</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+						<th>Email</th>
+						<th>Profession</th>
+                        <th>Host</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody id="visitors"></tbody>
+                    <tfoot>
+                      <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+						<th>Email</th>
+						<th>Profession</th>
+                        <th>Host</th>
+                        <th>Date</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+
+
+								</div>
+			                </div>
+			            </div>
+			        </div>
+		        </div>
+		
+
+	         </div>
+	        </div>
+	        <!-- End content -->
+        
+        </div>
+        <!-- End wrapper -->
+		
+        <!-- Javascript -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery-migrate-3.0.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/scripts.js"></script>
+		
+		
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+
+<script>
+   /*   $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      }); */
+$(document).ready(function() { 
+
+     getVisitors();
+
+    // get visitors from api
+
+     function getVisitors(){
+     
+      $.ajax({
+      url:'https://grandarenagh.com/vdapp/api/vdapp' 
+      }).done(function(visitors){
+       //console.log(visitors);
+
+      let output = '';
+
+      $.each(visitors, function(key, visitor){
+
+      output+=`
+                       <tr><td>${visitor.firstname}</td>
+                        <td>${visitor.lastname}</td>
+						<td>${visitor.number}</td>
+						<td>${visitor.email}</td>
+                        <td>${visitor.profession}</td>
+                        <td>${visitor.host}</td>
+                        <td>${visitor.created_at}</td>
+                        </tr>`;
+       
+       });
+    $('#visitors').append(output);
+}); 
+
+}
+
+
+} );
+</script>
+
+    </body>
+
+</html>
