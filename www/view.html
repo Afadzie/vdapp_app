@@ -78,7 +78,21 @@
                   <h3 class="box-title">Visitors Data Table</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
+				<table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+						<th>Email</th>
+						<th>Profession</th>
+						<th>Host</th>
+						<th>Purpose</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+					</table>
+                 <!-- <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>First Name</th>
@@ -102,7 +116,7 @@
                         <th>Date</th>
                       </tr>
                     </tfoot>
-                  </table>
+                  </table> -->
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 
@@ -148,6 +162,48 @@
       }); */
 $(document).ready(function() { 
 
+      $('#example1').DataTable({
+         "ajax" :{
+		 "url": "https://grandarenagh.com/vdapp/api/vdapp",
+		 "dataSrc": ""
+		 },
+		 "columns":[
+		  {"data":"firstname"},
+		  {"data":"lastname"},
+		  {"data":"number"},
+		  {"data":"email"},
+		  {"data":"profession"},
+		  {"data":"host"},
+		  {"data":"purpose"},
+		  {"data":"created_at"}
+		  ]
+        });
+
+
+/*
+
+$('#example1').DataTable({
+		  "processing": true,
+		  "servingSide": true,
+		  "ajax": "{{route('https://grandarenagh.com/vdapp/api/vdapp')}}",
+		  "columns":[
+		  {"data":"firstname","name":"firstname"},
+		  {"data":"lastname","name":"lastname"},
+		  {"data":"number","name":"number"},
+		  {"data":"email","name":"email"},
+		  {"data":"profession","name":"profession"},
+		  {"data":"host","name":"host"},
+		  {"data":"purpose","name":"purpose"},
+		  {"data":"created_at","name":"created_at"},
+		  {"data":"updated_at","name":"updated_at"}
+		  ]
+        });
+
+*/
+		
+		
+/*
+
      getVisitors();
 
     // get visitors from api
@@ -178,6 +234,8 @@ $(document).ready(function() {
 }); 
 
 }
+
+*/
 
 
 } );
